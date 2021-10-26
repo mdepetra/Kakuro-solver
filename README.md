@@ -1,1 +1,1 @@
-# kakuro-solver
+# Kakuro-solver
