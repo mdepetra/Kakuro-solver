@@ -1,1 +1,3 @@
 # kakuro-solver
+
+Kakuro (noto anche come Cross-Sum) è un puzzle che potrebbe essere descritto come la versione matematica di un cruciverba. La differenza con il cruciverba è che in un cruciverba Kakuro, dobbiamo riempire i campi vuoti con i numeri al posto delle lettere, e anche i suggerimenti usati per descrivere le parole in un cruciverba sono sostituiti da numeri, vale a dire la somma della sequenza numerica corrispondente.
