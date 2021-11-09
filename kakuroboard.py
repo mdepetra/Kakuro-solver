@@ -5,6 +5,7 @@
 
 import os
 
+# Function to print green colored text on the terminal
 def prGreen(skk): return ("\033[92m{}\033[00m" .format(skk))
 
 class KakuroBoard:
