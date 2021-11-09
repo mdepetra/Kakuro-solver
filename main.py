@@ -29,15 +29,15 @@ def main():
             board.showEmptyBoard()
             
             ans = input("Do you want to solve it? [Y/N] ")
-            if ans == 'Y':
+            if ans in 'Yy':
                 print("\n\nThe solution is: ")
                 start = time.time()
                 board.solve()
                 board.showSolutionBoard()
-                print("in %.10f seconds" %(time.time()- start))
+                print("in %.10f seconds" %(time.time()- start) + "\n")
 
             ans = input("Do you want to save all data? [Y/N] ")
-            if ans == 'Y':
+            if ans in 'Yy':
                 name = "KakuroBoard-" + time.strftime("%Y%m%d-%H%M%S")
                 board.save(name)
         elif selection == '2': 
@@ -54,9 +54,9 @@ def main():
                 start = time.time()
                 board.solve()
                 board.showSolutionBoard()
-                print("in %.10f seconds" %(time.time()- start))
+                print("in %.10f seconds" %(time.time()- start) + "\n")
             
-            ans = input("Do you want to save all data? [Y/N]")
+            ans = input("Do you want to save all data? [Y/N] ")
             if ans in 'Yy':
                 name = "KakuroBoard-" + time.strftime("%Y%m%d-%H%M%S")
                 board.save(name)
