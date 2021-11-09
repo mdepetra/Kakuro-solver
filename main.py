@@ -35,13 +35,31 @@ def main():
                 board.solve()
                 print("in %.10f seconds" %(time.time()- start))
 
-            ans = input("Do you want to save all data? [Y/N]")
+            ans = input("Do you want to save all data? [Y/N] ")
             if ans == 'Y':
                 name = input("Write the name you want to give it? ")
                 board.save(name)
         elif selection == '2': 
             print("Load and solve a board\n")
             print("Function currently not available")
+
+            rows = int(input("How many rows does the board have?" ))
+            columns = int(input("How many columns does the board have? "))
+            board = kakuroboard.KakuroBoard(rows, columns)
+            board.load()
+            board.show()
+            ans = input("\nIs this the board you want to upload and solve? [Y/N] ")
+            if ans == 'Y':
+                print("\n\n The solution is: ")
+                start = time.time()
+                board.solve()
+                print("in %.10f seconds" %(time.time()- start))
+            
+            ans = input("Do you want to save all data? [Y/N]")
+            if ans == 'Y':
+                name = input("Write the name you want to give it? ")
+                board.save(name)
+
         elif selection == '3':
             print("Exiting ...")
             break
