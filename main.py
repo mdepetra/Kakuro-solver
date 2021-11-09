@@ -19,45 +19,46 @@ def main():
             print("\t" + entry, menu[entry])
 
         selection = input("\nPlease select an option: ") 
-        print("")
+        print()
         if selection == '1': 
             print("Generate (and eventually solve) a new board\n")
-            rows = int(input("How many rows do you want?" ))
+            rows = int(input("How many rows do you want? "))
             columns = int(input("How many columns do you want? "))
             board = kakuroboard.KakuroBoard(rows, columns)
             board.generate()
-            board.show()
+            board.showEmptyBoard()
             
             ans = input("Do you want to solve it? [Y/N] ")
             if ans == 'Y':
-                print("\n\n The solution is: ")
+                print("\n\nThe solution is: ")
                 start = time.time()
                 board.solve()
+                board.showSolutionBoard()
                 print("in %.10f seconds" %(time.time()- start))
 
             ans = input("Do you want to save all data? [Y/N] ")
             if ans == 'Y':
-                name = input("Write the name you want to give it? ")
+                name = "KakuroBoard-" + time.strftime("%Y%m%d-%H%M%S")
                 board.save(name)
         elif selection == '2': 
             print("Load and solve a board\n")
-            print("Function currently not available")
-
-            rows = int(input("How many rows does the board have?" ))
+            rows = int(input("How many rows does the board have? "))
             columns = int(input("How many columns does the board have? "))
             board = kakuroboard.KakuroBoard(rows, columns)
             board.load()
-            board.show()
+            board.showEmptyBoard()
+
             ans = input("\nIs this the board you want to upload and solve? [Y/N] ")
-            if ans == 'Y':
+            if ans in 'Yy':
                 print("\n\n The solution is: ")
                 start = time.time()
                 board.solve()
+                board.showSolutionBoard()
                 print("in %.10f seconds" %(time.time()- start))
             
             ans = input("Do you want to save all data? [Y/N]")
-            if ans == 'Y':
-                name = input("Write the name you want to give it? ")
+            if ans in 'Yy':
+                name = "KakuroBoard-" + time.strftime("%Y%m%d-%H%M%S")
                 board.save(name)
 
         elif selection == '3':
