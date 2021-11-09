@@ -130,3 +130,5 @@ class KakuroBoard:
         f = open(path + name + ".txt", "w")
         f.write(tmp)
         f.close()
+
+        print("Board saved in " + path + " as " + name + ".txt\n")
